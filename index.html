@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+  <title>Ecologico Market</title>
+</head>
+<body>
+	<script src="javascript.js"></script>
+
+  <nav class="bg-red-600 p-4"></nav>
+  <div>
+    <h1 class="text-center text-3xl font-bold">Bienvenido a Ecologico Market</h1>
+    <p class="text-center text-lg">Tu tienda de productos ecologicos</p>
+  </div>
+  <div class="flex justify-center p-3 items-center">
+    <img src="img/WhatsApp Image 2024-05-03 at 3.58.28 PM.jpeg" alt="Descripción de la imagen" class="w-30 h-30 " />
+  </div>
+  
+ 
+
+  <div class="p-4">
+    <div class="container mx-auto flex justify-center">
+      <div class="flex items-center space-x-28">
+       
+        <ul class="flex ml-auto space-x-28">
+          <li><a href="#" class="text-black-300 hover:text-yellow-300 font-bold text-2xl">Alimentación</a></li>
+          <li><a href="#" class="text-black-300 hover:text-yellow-300 font-bold text-2xl mr-10">Cosmética</a></li>
+          <li><a href="#" class="text-black-300 hover:text-yellow-300 font-bold text-2xl">Artesanía</a></li>
+        </ul>
+      </div>
+     
+    </div>
+  </div>
+  <div class="flex justify-center p-3 items-center">
+    <img src="img/WhatsApp Image 2024-05-03 at 3.49.44 PM.jpeg" alt="Descripción de la imagen" class="w-30 h-30 " />
+  </div>
+ <!--Seccion de Alimentos-->
+<div>
+  <h1 class="font-bold text-black-300 text-2xl">Alimentación</h1>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/tailwindcss-cdn@3.4.1/tailwindcss.js"></script>
+<script src="//unpkg.com/alpinejs" defer></script>
+<div x-data="swipeCards1()" x-init="
+			let isDown = false;
+			let startX;
+			let scrollLeft;
+			$el.addEventListener('mousedown', (e) => {
+			isDown = true;
+			startX = e.pageX - $el.offsetLeft;
+			scrollLeft = $el.scrollLeft;
+			});
+			$el.addEventListener('mouseleave', () => {
+			isDown = false;
+			});
+			$el.addEventListener('mouseup', () => {
+			isDown = false;
+			});
+			$el.addEventListener('mousemove', (e) => {
+			if (!isDown) return;
+			e.preventDefault();
+			const x = e.pageX - $el.offsetLeft;
+			const walk = (x - startX) * 1;
+			$el.scrollLeft = scrollLeft - walk;
+			});
+			" class="overflow-x-scroll scrollbar-hide mb-4 relative px-0.5" style="overflow-y: hidden;">
+	<div class="flex snap-x snap-mandatory gap-4" style="width: max-content;">
+		<template x-for="card in cards" :key="card.id">
+			<div class="flex-none w-64 snap-center">
+				<div class="bg-white border-1 border border-gray-200 rounded-lg overflow-hidden mb-4">
+					<img :src="card.image" alt="" class="w-full h-60 object-cover ">
+					<div class="p-4">
+						<h3 class="text-lg leading-6 font-bold text-gray-900" x-text="card.title"></h3>
+						<p class="text-gray-600 mt-2 text-sm" x-text="card.description"></p>
+						<div class="flex justify-between items-center mt-4">
+							<span class="text-2xl font-extrabold text-gray-900" x-text="'$' + card.price.toFixed(2)"></span>
+							<a :href="card.link"
+								class="text-white bg-fuchsia-950 hover:bg-fuchsia-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"><svg
+									xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+									stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+									<path stroke-linecap="round" stroke-linejoin="round"
+										d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+								</svg></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+	</div>
+</div>
+<script>
+	function swipeCards1() {
+		return {
+			cards: [
+				{
+					id: 1,
+					image: 'https://walmartsv.vtexassets.com/arquivos/ids/406392/Caf-Coex-Tostado-Molido-Bolsa-400g-2-10532.jpg?v=638423987078900000' + encodeURIComponent('Cafe'),
+					title: 'Cafe de grano ',
+					description: 'Tropical mix of flavors, perfect for parties.',
+					price: 8.99,
+					link: 'https://lqrs.com'
+				},
+				{
+					id: 2,
+					image: 'https://i5.walmartimages.com.mx/mg/gm/3pp/asr/a24471b0-afd6-49d2-826a-aaf8a5f0b850.c551433f49b90c90895fd5a5a0b6fbe6.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF' + encodeURIComponent('Cerveza'),
+					title: 'Cerveza Artesanal',
+					description: 'Refreshing blend of fruits and yogurt.',
+					price: 5.49,
+					link: 'https://lqrs.com'
+				},
+				{
+					id: 3,
+					image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYVjOkHcD8gxjXzxeCSTi32AH7MsOhD8vKBpbmxiH8wQ&s' + encodeURIComponent('Iced Coffee'),
+					title: 'Miel Cruda Ecologica',
+					description: 'Cold brewed coffee with a hint of vanilla.',
+					price: 4.99,
+					link: 'https://lqrs.com'
+				},
+				{
+					id: 4,
+					image: 'https://source.unsplash.com/random/300x200?' + encodeURIComponent('Mojito'),
+					title: 'Mojito',
+					description: 'Classic Cuban cocktail with mint and lime.',
+					price: 7.99,
+					link: 'https://lqrs.com'
+				},
+				{
+					id: 5,
+					image: 'https://source.unsplash.com/random/300x200?' + encodeURIComponent('Matcha Latte'),
+					title: 'Matcha Latte',
+					description: 'Creamy green tea latte, rich in antioxidants.',
+					price: 6.49,
+					link: 'https://lqrs.com'
+				},
+				{
+					id: 6,
+					image: 'https://source.unsplash.com/random/300x200?' + encodeURIComponent('Fruit Punch'),
+					title: 'Fruit Punch',
+					description: 'Sweet and tangy punch, bursting with fruity flavors.',
+					price: 3.99,
+					link: 'https://lqrs.com'
+				},
+				{
+					id: 7,
+					image: 'https://source.unsplash.com/random/300x200?' + encodeURIComponent('Bubble Tea'),
+					title: 'Bubble Tea',
+					description: 'Chewy tapioca pearls in a sweet milk tea base.',
+					price: 4.99,
+					link: 'https://lqrs.com'
+				}
+			],
+			addToCart(product) {
+				// Implement your add to cart logic here
+				console.log('Adding to cart:', product);
+			}
+		};
+	}
+</script>
+
+
+
+
+<!-- Seccion Cosmetica-->
+
+<div>
+  <h1 class="font-bold text-2xl text-black-300">Cosmetica</h1>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/tailwindcss-cdn@3.4.1/tailwindcss.js"></script>
+<script src="//unpkg.com/alpinejs" defer></script>
+<div x-data="swipeCards2()" x-init="
+			let isDown = false;
+			let startX;
+			let scrollLeft;
+			$el.addEventListener('mousedown', (e) => {
+			isDown = true;
+			startX = e.pageX - $el.offsetLeft;
+			scrollLeft = $el.scrollLeft;
+			});
+			$el.addEventListener('mouseleave', () => {
+			isDown = false;
+			});
+			$el.addEventListener('mouseup', () => {
+			isDown = false;
+			});
+			$el.addEventListener('mousemove', (e) => {
+			if (!isDown) return;
+			e.preventDefault();
+			const x = e.pageX - $el.offsetLeft;
+			const walk = (x - startX) * 1;
+			$el.scrollLeft = scrollLeft - walk;
+			});
+			" class="overflow-x-scroll scrollbar-hide mb-4 relative px-0.5" style="overflow-y: hidden;">
+	<div class="flex snap-x snap-mandatory gap-4" style="width: max-content;">
+		<template x-for="card in cards" :key="card.id">
+			<div class="flex-none w-64 snap-center">
+				<div class="bg-white border-1 border border-gray-200 rounded-lg overflow-hidden mb-4">
+					<img :src="card.image" alt="" class="w-full h-40 object-cover">
+					<div class="p-4">
+						<h3 class="text-lg leading-6 font-bold text-gray-900" x-text="card.title"></h3>
+						<p class="text-gray-600 mt-2 text-sm" x-text="card.description"></p>
+						<div class="flex justify-between items-center mt-4">
+							<span class="text-2xl font-extrabold text-gray-900" x-text="'$' + card.price.toFixed(2)"></span>
+							<a :href="card.link"
+								class="text-white bg-fuchsia-950 hover:bg-fuchsia-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"><svg
+									xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+									stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+									<path stroke-linecap="round" stroke-linejoin="round"
+										d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+								</svg></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+	</div>
+</div>
+<script>
+	function swipeCards2() {
+			  return {
+			    cards: [
+			      {
+			        id: 1,
+        image: 'https://source.unsplash.com/random/300x200?' + encodeURIComponent('Cocktail'),
+			        title: 'Cocktail',
+			        description: 'Tropical mix of flavors, perfect for parties.',
+			        price: 8.99,
+			        link: 'https://lqrs.com'
+			      },
+			      {
+			        id: 2,
+        image: 'https://source.unsplash.com/random/300x200?' + encodeURIComponent('Smoothie'),
+			        title: 'Smoothie',
+			        description: 'Refreshing blend of fruits and yogurt.',
+			        price: 5.49,
+			        link: 'https://lqrs.com'
+			      },
+			      {
+			        id: 3,
+        image: 'https://source.unsplash.com/random/300x200?' + encodeURIComponent('Iced Coffee'),
+			        title: 'Iced Coffee',
+			        description: 'Cold brewed coffee with a hint of vanilla.',
+			        price: 4.99,
+			        link: 'https://lqrs.com'
+			      },
+			      {
+			        id: 4,
+        image: 'https://source.unsplash.com/random/300x200?' + encodeURIComponent('Mojito'),
+			        title: 'Mojito',
+			        description: 'Classic Cuban cocktail with mint and lime.',
+			        price: 7.99,
+			        link: 'https://lqrs.com'
+			      },
+			      {
+			        id: 5,
+        image: 'https://source.unsplash.com/random/300x200?' + encodeURIComponent('Matcha Latte'),
+			        title: 'Matcha Latte',
+			        description: 'Creamy green tea latte, rich in antioxidants.',
+			        price: 6.49,
+			        link: 'https://lqrs.com'
+			      },
+			      {
+			        id: 6,
+        image: 'https://source.unsplash.com/random/300x200?' + encodeURIComponent('Fruit Punch'),
+			        title: 'Fruit Punch',
+			        description: 'Sweet and tangy punch, bursting with fruity flavors.',
+			        price: 3.99,
+			        link: 'https://lqrs.com'
+			      },
+			      {
+			        id: 7,
+        image: 'https://source.unsplash.com/random/300x200?' + encodeURIComponent('Bubble Tea'),
+			        title: 'Bubble Tea',
+			        description: 'Chewy tapioca pearls in a sweet milk tea base.',
+			        price: 4.99,
+			        link: 'https://lqrs.com'
+			      }
+			    ],
+			    addToCart(product) {
+			      // Implement your add to cart logic here
+			      console.log('Adding to cart:', product);
+			    }
+			  };
+			}
+</script>
+<!--Seccion de Artesania-->
+
+<div>
+  <h1 class="font-bold text-2xl text-black-300">Artesania</h1>
+
+<script src="https://cdn.jsdelivr.net/npm/tailwindcss-cdn@3.4.1/tailwindcss.js"></script>
+<script src="//unpkg.com/alpinejs" defer></script>
+<div x-data="swipeCards3()" x-init="
+			let isDown = false;
+			let startX;
+			let scrollLeft;
+			$el.addEventListener('mousedown', (e) => {
+			isDown = true;
+			startX = e.pageX - $el.offsetLeft;
+			scrollLeft = $el.scrollLeft;
+			});
+			$el.addEventListener('mouseleave', () => {
+			isDown = false;
+			});
+			$el.addEventListener('mouseup', () => {
+			isDown = false;
+			});
+			$el.addEventListener('mousemove', (e) => {
+			if (!isDown) return;
+			e.preventDefault();
+			const x = e.pageX - $el.offsetLeft;
+			const walk = (x - startX) * 1;
+			$el.scrollLeft = scrollLeft - walk;
+			});
+			" class="overflow-x-scroll scrollbar-hide mb-4 relative px-0.5" style="overflow-y: hidden;">
+	<div class="flex snap-x snap-mandatory gap-4" style="width: max-content;">
+		<template x-for="card in cards" :key="card.id">
+			<div class="flex-none w-64 snap-center">
+				<div class="bg-white border-1 border border-gray-200 rounded-lg overflow-hidden mb-4">
+					<img :src="card.image" alt="" class="w-full h-40 object-cover">
+					<div class="p-4">
+						<h3 class="text-lg leading-6 font-bold text-gray-900" x-text="card.title"></h3>
+						<p class="text-gray-600 mt-2 text-sm" x-text="card.description"></p>
+						<div class="flex justify-between items-center mt-4">
+							<span class="text-2xl font-extrabold text-gray-900" x-text="'$' + card.price.toFixed(2)"></span>
+							<a :href="card.link"
+								class="text-white bg-fuchsia-950 hover:bg-fuchsia-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"><svg
+									xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+									stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+									<path stroke-linecap="round" stroke-linejoin="round"
+										d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+								</svg></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+	</div>
+</div>
+<script>
+	function swipeCards3() {
+			  return {
+			    cards: [
+			      {
+			        id: 1,
+        image: 'https://walmartsv.vtexassets.com/arquivos/ids/406392/Caf-Coex-Tostado-Molido-Bolsa-400g-2-10532.jpg?v=638423987078900000' + encodeURIComponent('Cafe'),
+			        title: 'Cocktail 1000',
+			        description: 'Tropical mix of flavors, perfect for parties.',
+			        price: 8.99,
+			        link: 'https://lqrs.com'
+			      },
+			      {
+			        id: 2,
+        image: 'https://source.unsplash.com/random/300x200?' + encodeURIComponent('Smoothie'),
+			        title: 'Smoothie 333',
+			        description: 'Refreshing blend of fruits and yogurt.',
+			        price: 5.49,
+			        link: 'https://lqrs.com'
+			      },
+			      {
+			        id: 3,
+        image: 'https://source.unsplash.com/random/300x200?' + encodeURIComponent('Iced Coffee'),
+			        title: 'Iced Coffee',
+			        description: 'Cold brewed coffee with a hint of vanilla.',
+			        price: 4.99,
+			        link: 'https://lqrs.com'
+			      },
+			      {
+			        id: 4,
+        image: 'https://source.unsplash.com/random/300x200?' + encodeURIComponent('Mojito'),
+			        title: 'Mojito',
+			        description: 'Classic Cuban cocktail with mint and lime.',
+			        price: 7.99,
+			        link: 'https://lqrs.com'
+			      },
+			      {
+			        id: 5,
+        image: 'https://source.unsplash.com/random/300x200?' + encodeURIComponent('Matcha Latte'),
+			        title: 'Matcha Latte',
+			        description: 'Creamy green tea latte, rich in antioxidants.',
+			        price: 6.49,
+			        link: 'https://lqrs.com'
+			      },
+			      {
+			        id: 6,
+        image: 'https://source.unsplash.com/random/300x200?' + encodeURIComponent('Fruit Punch'),
+			        title: 'Fruit Punch',
+			        description: 'Sweet and tangy punch, bursting with fruity flavors.',
+			        price: 3.99,
+			        link: 'https://lqrs.com'
+			      },
+			      {
+			        id: 7,
+        image: 'https://source.unsplash.com/random/300x200?' + encodeURIComponent('Bubble Tea'),
+			        title: 'Bubble Tea',
+			        description: 'Chewy tapioca pearls in a sweet milk tea base.',
+			        price: 4.99,
+			        link: 'https://lqrs.com'
+			      }
+			    ],
+			    addToCart(product) {
+			      // Implement your add to cart logic here
+			      console.log('Adding to cart:', product);
+			    }
+			  };
+			}
+</script>
+</div>
+
+
+<footer class="bg-red-500 py-4 text-center text-white">
+	<h1 class="text-green-500 text-left ml-10 text-2xl font-bold">CONTACTO</h1>
+	<h1 class="text-white-300 text-left ml-10 mt-4 font-bold">Asistencia Tecnica : </h1>
+	<p class="text-left ml-10 text-white-200">Tel.609 220 300</p>
+  </footer>
+  
+</body>
+</html>
